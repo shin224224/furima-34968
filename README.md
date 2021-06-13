@@ -1,7 +1,7 @@
 # テーブル設計
 ## users テーブル
 
-| culumn                  | Type   | Options    |
+| column                  | Type   | Options    |
 | ----------------------- | ------ | ---------- |
 | nickname                | string | null:false |
 | email                   | string | null:false |
@@ -19,28 +19,26 @@
 
 
 ##  addressテーブル
-| culumn                   | Type    | Options                        |
-| ------------------------ | ------- | ------------------------------ |
-| postal_cord              | string  | null:false                     |
-| prefectures              | integer | null:false , foreign_key: true |
-| city                     | string  | null:false                     |
-| adress                   | string  | null:false                     |
-| buildingname             | string  |                                |
-| phone_number             | string  | null:false                     |
+| column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+| postal_cord   | string  | null:false                     |
+| prefectures   | integer | null:false , foreign_key: true |
+| city          | string  | null:false                     |
+| address       | string  | null:false                     |
+| building_name | string  |                                |
+| phone_number  | string  | null:false                     |
 
 
 ## Items テーブル
 
-| culumn          | Type   | Options    |
-| --------------- | ------ | ---------- |
-| image_url       | string | null:false |
-| name            | string | null:false |
-| category        | string | null:false |
-| explanation     | text   | null:false |
-| status          | string | null:false |
-| delivery_charge | string | null:false |
-| area            | string | null:false |
-| days            | string | null:false |
-| price           | string | null:false |
-
+| column          | Type    | Options    |
+| --------------- | ------- | ---------- |
+| name            | string  | null:false |
+| category        | string  | null:false |
+| explanation     | text    | null:false |
+| status          | string  | null:false |
+| delivery_charge | string  | null:false |
+| area            | string  | null:false |
+| scheduled_days  | string  | null:false |
+| price           | integer | null:false |
 

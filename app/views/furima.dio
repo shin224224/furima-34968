@@ -13,7 +13,7 @@
                 <mxCell id="19" value="Items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="360" y="20" width="260" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="id(デフォルト記載なし)&#10;画像l&#10;名前&#10;カテゴリー&#10;説明&#10;状態&#10;配送料&#10;地域&#10;日数&#10;値段" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="19" vertex="1">
+                <mxCell id="22" value="id(デフォルト記載なし)&#10;画像(activestorage記載なし)&#10;名前&#10;カテゴリー&#10;説明&#10;状態&#10;配送料&#10;地域&#10;日数&#10;値段" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="19" vertex="1">
                     <mxGeometry y="26" width="260" height="174" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="Address" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
