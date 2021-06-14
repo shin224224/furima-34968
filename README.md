@@ -1,32 +1,33 @@
 # テーブル設計
 ## users テーブル
 
-| column                  | Type   | Options    |
-| ----------------------- | ------ | ---------- |
-| nickname                | string | null:false |
-| email                   | string | null:false |
-| encrypted_password      | string | null:false ||
-| first_name_zenkaku      | string | null:false |
-| last_name_zenkaku       | string | null:false |
-| first_name_kana_zenkaku | string | null:false |
-| last_name_kana_zenkaku  | string | null:false |
-| birthday                | date   | null:false |
+| column                  | Type   | Options                  |
+| ----------------------- | ------ | ------------------------ | 
+| nickname                | string | null:false               | 
+| email                   | string | null:false ,unique: true | 
+| encrypted_password      | string | null:false               |     
+| first_name_zenkaku      | string | null:false               |     
+| last_name_zenkaku       | string | null:false               |     
+| first_name_kana_zenkaku | string | null:false               |     
+| last_name_kana_zenkaku  | string | null:false               |     
+| birthday                | date   | null:false               | 
 
 
-- has_many : Items
-- has_many : Item_purchases
+- has_many : items
+- has_many : item_purchases
 
 
 
-##  addressテーブル
-| column         | Type    | Options    |
-| -------------- | ------- | ---------- |
-| postal_cord    | string  | null:false |
-| prefectures_id | integer | null:false |
-| city           | string  | null:false |
-| address        | string  | null:false |
-| building_name  | string  |            |
-| phone_number   | string  | null:false |
+##  addressesテーブル
+| column         | Type       | Options                       |     
+| -------------- | ---------- | ----------------------------- | 
+| postal_cord    | string     | null:false                    |  
+| prefectures_id | integer    | null:false                    |     
+| city           | string     | null:false                    |     
+| address        | string     | null:false                    |    
+| building_name  | string     |                               |     
+| phone_number   | string     | null:false                    |    
+| item_purchase  | references | null:false, foreign_key: true |     
 
 - belongs_to : item_purchase
 
