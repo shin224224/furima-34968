@@ -102,6 +102,37 @@ it "価格は半角でないと登録できない" do
   expect(@item.errors.full_messages).to include('User must exist')
  end
 
+ it 'カテゴリーidが2以上でなければ登録できない' do
+  @item.category_id = 1
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Category must be other than 1")
+end
+
+#商品情報が空では登録できない
+it '商品情報idが2以上でなければ登録できない' do
+  @item.status_id = 1
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Status must be other than 1")
+end
+#発想量が空では登録できない
+it '発想量idが2以上でなければ登録できない' do
+  @item.delivery_charge_id = 1
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Delivery charge must be other than 1")
+end
+#地域が空では登録できない
+it '地域idが2以上でなければ登録できない' do
+  @item.prefecture_id = 1
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+end
+#日数が空では登録できない。
+it '日数idが2以上でなければ登録できない' do
+  @item.scheduled_day_id = 1
+  @item.valid?
+  expect(@item.errors.full_messages).to include("Scheduled day must be other than 1")
+end
+
 
 end
 end
