@@ -96,7 +96,11 @@ it "価格は半角でないと登録できない" do
   expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
   
   end
-
+ it "userが存在しないと登録できない" do
+  @item.user = nil
+  @item.valid?
+  expect(@item.errors.full_messages).to include('User must exist')
+ end
 
 
 end

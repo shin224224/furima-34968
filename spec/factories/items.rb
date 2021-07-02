@@ -8,7 +8,7 @@ FactoryBot.define do
     delivery_charge_id {2}
     prefecture_id       {2}
     scheduled_day_id  {2}
-    price                 {"111111"}
+    price                 {111111}
 
 
 
