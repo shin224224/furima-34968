@@ -1,17 +1,19 @@
 class Item < ApplicationRecord
-
-  validates :name, presence:true
-  validates :image, presence:true
-  validates :category_id, presence:true
-  validates :explanation, presence:true
-  validates :status_id, presence:true
-  validates :delivery_charge_id, presence:true
-  validates :prefecture_id, presence:true
-  validates :scheduled_day_id, presence:true
-  validates :price, presence:true
+  with_options presence: true do
+  validates :name
+  validates :image
+  validates :category_id
+  validates :explanation
+  validates :status_id
+  validates :delivery_charge_id
+  validates :prefecture_id
+  validates :scheduled_day_id
+  validates :price 
+  validates :user
+  end
   validates :price, format: {with: /\A[0-9]+\z/ }
-  validates :price, numericality: { in: 300..9999999 }
-  validates :user, presence:true
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to:9_999_999 }
+  
 
 
   belongs_to :user
@@ -24,12 +26,13 @@ class Item < ApplicationRecord
   belongs_to :scheduled_day
   belongs_to :status
   #ジャンルの選択が「--」の時は保存できないようにする
-  validates :category_id, numericality: { other_than: 1 } 
-  validates :delivery_charge_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :scheduled_day_id, numericality: { other_than: 1 }
-  validates :status_id, numericality: { other_than: 1 }
-
+  with_options numericality: { other_than: 1 }  do
+  validates :category_id
+  validates :delivery_charge_id
+  validates :prefecture_id
+  validates :scheduled_day_id
+  validates :status_id
+  end
 end
 
 
