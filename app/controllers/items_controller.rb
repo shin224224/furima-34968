@@ -1,9 +1,11 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new :create]
+  before_action :authenticate_user!, only: [:new, :create]
   
   
   def index
-    # @items = Item.order("created_at DESC")
+     
+     @items = Item.order("created_at DESC")
+    # created_at 作成日時  DESC 降順 (新しい順)
   end
 
   def new
