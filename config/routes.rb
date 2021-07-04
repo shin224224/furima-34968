@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create, :show]
 
  
   get 'items/index'
