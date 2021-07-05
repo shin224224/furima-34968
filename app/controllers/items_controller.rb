@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_item, only: [:edit, :show, :update,]
+  before_action :set_item, only: [:edit, :show, :update]
   before_action :move_to_index, except: [:index, :show, :new, :create]
-  
+
   def index
     @items = Item.order('created_at DESC')
     # created_at 作成日時  DESC 降順 (新しい順)
@@ -23,24 +23,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-  
   end
 
   def edit
- 
   end
 
   def update
-    
-      if @item.update(item_params)
-        redirect_to item_path
-      else 
-        render :edit
-      end
-
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
-
-
 
   private
 
@@ -54,10 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-     if @item.user !=  current_user
-      redirect_to action: :index
-  
-     end
-   end 
-
+    redirect_to action: :index if @item.user != current_user
+  end
 end
