@@ -37,13 +37,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-   
     if @item.destroy
       redirect_to items_path
-    # render :index
+      # render :index
     end
   end
-
 
   private
 
@@ -57,8 +55,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    if @item.user != current_user
-    redirect_to action: :index 
+    redirect_to action: :index if @item.user != current_user
   end
-end
 end
