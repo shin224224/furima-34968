@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   def destroy
     if @item.destroy
       redirect_to items_path
-      # render :index
+      #  memo render :indexはbeforeactionで定義
     end
   end
 
