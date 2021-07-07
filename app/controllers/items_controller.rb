@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_item, only: [:edit, :show, :update]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :new, :create]
 
   def index
@@ -36,6 +36,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+      #  memo 処理が完了した後に行うパスはroot_path（TOPに戻る場合）  items_pathは同じアクションだがURI Patternがちがう　
+      #  memo render:indexは使用しない遷移するときはちがう。
+
+    end
+  end
+
   private
 
   def item_params
@@ -48,6 +57,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index if @item.user != current_user
+    if @item.user != current_user
+    redirect_to action: :index 
   end
 end
