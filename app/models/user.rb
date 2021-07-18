@@ -8,8 +8,8 @@ class User < ApplicationRecord
     validates :nickname
     validates :birthday
 
-    # has_many : items
-    # has_many : item_purchases
+    #  has_many : items
+    #  has_many : item_purchases
 
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     # memo confirmationはdeviseであるため記載の必要なし　
