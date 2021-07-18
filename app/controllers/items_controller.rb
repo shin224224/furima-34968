@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show, :new, :create]
 
-  #usercontroller はユーザの詳細ページがいる場合は作成する必要がある。
+  # usercontroller はユーザの詳細ページがいる場合は作成する必要がある。
 
   def index
     @items = Item.order('created_at DESC')
@@ -59,11 +59,10 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    if @item.user != current_user || @item.item_purchase.present? 
-    redirect_to action: :index 
-    #@item = Item.find(params[:id])はsetitemで定義しているので、@itemを定義していない。
-    # || = A or B
+    if @item.user != current_user || @item.item_purchase.present?
+      redirect_to action: :index
+      # @item = Item.find(params[:id])はsetitemで定義しているので、@itemを定義していない。
+      # || = A or B
+    end
   end
-
-end
 end
