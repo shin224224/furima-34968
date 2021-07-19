@@ -9,9 +9,9 @@ RSpec.describe ItemPurchaseAddress, type: :model do
     end
 
     context '内容に問題ない場合' do
-      # it 'すべての値が正しく入力されていれば保存できること' do
-      #   expect(@item_purchase_address).to be_valid
-      # end
+       it 'すべての値が正しく入力されていれば保存できること' do
+         expect(@item_purchase_address).to be_valid
+       end
       it 'building_nameは空でも保存できること' do
         @item_purchase_address.building_name = ''
         expect(@item_purchase_address).to be_valid
@@ -57,6 +57,13 @@ RSpec.describe ItemPurchaseAddress, type: :model do
         @item_purchase_address.valid?
         expect(@item_purchase_address.errors.full_messages).to include('Phone number is invalid')
       end
+
+      it 'phone_numberが英数字混合では登録できない' do
+        @item_purchase_address.phone_number = 'aaa111'
+        @item_purchase_address.valid?
+        expect(@item_purchase_address.errors.full_messages).to include('Phone number is invalid')
+      end
+
 
       it 'userが紐付いていないと保存できないこと' do
         @item_purchase_address.user_id = nil
