@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :items
+  resources :items do
+    resources :item_purchases, only: [:index, :create]
+  end
+  
 
  
   get 'items/index'

@@ -141,9 +141,12 @@
         <div class='item-img-content'>
          <%= image_tag item.image, class: "item-img" %> 
           <%# 商品が売れていればsold outを表示しましょう %>
+         <%if item.item_purchase.present?%>
+         <%# item(出品)テーブルとitem_purchase(購入履歴)の両方にデータがあれば購入されているということで、表示される %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+         <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
 
         </div>

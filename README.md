@@ -1,3 +1,4 @@
+
 # テーブル設計
 ## users テーブル
 
@@ -57,7 +58,7 @@
 | user   | references | null:false, foreign_key: true |
 | item   | references | null:false, foreign_key: true |
 
-
+<!-- referenceがたは勝手にidがつく -->
 - has_one : address
 - belongs_to : item
 - belongs_to : user
