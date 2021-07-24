@@ -41,7 +41,7 @@ class ItemPurchasesController < ApplicationController
   # end
   def move_to_index
   
-    if @item.user == current_user
+    if @item.user == current_user || @item.item_purchase.present?
       #==で〜ならばと比較している =一つの場合、代入になってします。
       redirect_to root_path
     end
