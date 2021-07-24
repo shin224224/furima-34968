@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_item, only: [:edit, :show, :update, :destroy]
-  before_action :move_to_index, except: [:index, :show, :new, :create]
+  before_action :move_to_index, except: [:index, :new, :create]
 
   # usercontroller はユーザの詳細ページがいる場合は作成する必要がある。
 
