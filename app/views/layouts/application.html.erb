@@ -2,6 +2,17 @@
 <html>
 
 <head>
+<%# アナリティクス %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5VC610BST"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N5VC610BST');
+</script>
+
   <title>Furima</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -11,6 +22,7 @@
 </head>
 
 <body>
+<%# yieldで、それぞれのアクション名に対するコントローラとアクションを呼び出している。 %>
   <%= yield %>
 </body>
 
