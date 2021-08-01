@@ -8,7 +8,7 @@ Rails.application.configure do
   # your application in memory, allowing both threaded web servers
    
   # replace this with your tracker code
-  GA.tracker = "G-N5VC610BST"
+  GA.tracker = "UA-203687862-1"
   
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
