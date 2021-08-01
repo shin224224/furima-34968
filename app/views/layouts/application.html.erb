@@ -4,7 +4,7 @@
 <head>
 <%# アナリティクス %>
       
-
+<%= analytics_init if Rails.env.production? %>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5VC610BST"></script>
 <script>

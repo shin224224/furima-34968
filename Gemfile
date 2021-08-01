@@ -74,6 +74,8 @@ gem 'pry-rails'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
 gem 'google-analytics-rails'
+gem 'google-analytics-data-v1alpha'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
