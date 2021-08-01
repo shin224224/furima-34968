@@ -3,12 +3,7 @@
 
 <head>
 <%# アナリティクス %>
-      <title><%= yield(:title) %></title>
-      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-      <%= csrf_meta_tags %>
-      <%= analytics_init if Rails.env.production? %>  
-      <%# // これを追加 %>
+      
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5VC610BST"></script>
